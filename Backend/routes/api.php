@@ -19,6 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// Show comment của sản phẩm 
 Route::get('show/{id}',      [ApiCommentController::class,'show']);
+
+// comment sản phẩm
 Route::post('comment/{id}',      [ApiCommentController::class,'store']);
+
+//xóa comment
+Route::delete('delete/{id}',      [ApiCommentController::class,'destroy']);
 

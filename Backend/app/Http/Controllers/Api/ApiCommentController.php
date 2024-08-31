@@ -83,6 +83,12 @@ class ApiCommentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $comment = Comment::query()->findOrFail($id);
+
+        $comment->delete();
+        return response()->json([
+            'message' => 'Delete Success comment',
+        ],200);
+
     }
 }
